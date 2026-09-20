@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Loan Approval Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Header -->
+        <header class="hero">
+
+            <div class="hero-icon">🏦</div>
+
+            <div>
+                <span class="eyebrow">MACHINE LEARNING APPLICATION</span>
+
+                <h1>Loan Approval Prediction</h1>
+
+                <p>
+                    Enter applicant information to predict the likelihood
+                    of loan approval using our trained machine learning model.
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- Main Card -->
+        <main class="main-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Applicant Information</h2>
+                    <p>Provide the applicant's details below.</p>
+                </div>
+
+                <span class="required-note">* Required</span>
+            </div>
+
+
+            <form id="loanForm">
+
+                <!-- Personal Information -->
+                <div class="form-section">
+
+                    <h3>👤 Personal Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="gender">
+                                Gender <span>*</span>
+                            </label>
+
+                            <select id="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="married">
+                                Married <span>*</span>
+                            </label>
+
+                            <select id="married" required>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="dependents">
+                                Dependents <span>*</span>
+                            </label>
+
+                            <select id="dependents" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3+">3+</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="education">
+                                Education <span>*</span>
+                            </label>
+
+                            <select id="education" required>
+                                <option value="graduate">Graduate</option>
+                                <option value="not graduate">Not Graduate</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="self_employed">
+                                Self Employed <span>*</span>
+                            </label>
+
+                            <select id="self_employed" required>
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Financial Information -->
+                <div class="form-section">
+
+                    <h3>💰 Financial Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="applicantincome">
+                                Applicant Income <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span>₹</span>
+
+                                <input
+                                    type="number"
+                                    id="applicantincome"
+                                    min="0"
+                                    value="5000"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="coapplicantincome">
+                                Coapplicant Income <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span>₹</span>
+
+                                <input
+                                    type="number"
+                                    id="coapplicantincome"
+                                    min="0"
+                                    value="2000"
+                                    step="0.01"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="loanamount">
+                                Loan Amount <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span>₹</span>
+
+                                <input
+                                    type="number"
+                                    id="loanamount"
+                                    min="1"
+                                    value="150"
+                                    step="0.01"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="loan_amount_term">
+                                Loan Term <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <input
+                                    type="number"
+                                    id="loan_amount_term"
+                                    min="1"
+                                    value="360"
+                                    required
+                                >
+
+                                <span>days</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Credit & Property -->
+                <div class="form-section">
+
+                    <h3>🏠 Credit & Property Details</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="credit_history">
+                                Credit History <span>*</span>
+                            </label>
+
+                            <select id="credit_history" required>
+                                <option value="1">Good (1)</option>
+                                <option value="0">Bad (0)</option>
+                            </select>
+
+                            <small>
+                                1 = Good credit history, 0 = Poor credit history
+                            </small>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="property_area">
+                                Property Area <span>*</span>
+                            </label>
+
+                            <select id="property_area" required>
+                                <option value="urban">Urban</option>
+                                <option value="semiurban">Semiurban</option>
+                                <option value="rural">Rural</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="actions">
+
+                    <button
+                        type="button"
+                        id="resetButton"
+                        class="reset-button"
+                    >
+                        Reset
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="predictButton"
+                        class="predict-button"
+                    >
+                        <span id="buttonText">
+                            Predict Loan Approval
+                        </span>
+
+                        <span id="buttonSpinner" class="spinner hidden"></span>
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Loading -->
+            <div id="loading" class="loading hidden">
+                <div class="loading-spinner"></div>
+
+                <p>Analyzing applicant information...</p>
+            </div>
+
+
+            <!-- Result -->
+            <section id="result" class="result hidden">
+
+                <div class="result-icon" id="resultIcon">
+                    ✓
+                </div>
+
+                <div class="result-content">
+
+                    <span class="result-label">
+                        PREDICTION RESULT
+                    </span>
+
+                    <h2 id="predictionText">
+                        Loan Approved
+                    </h2>
+
+                    <p>
+                        Estimated approval probability
+                    </p>
+
+
+                    <div class="probability-row">
+
+                        <span id="probabilityText">
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-container">
+
+                        <div
+                            id="probabilityBar"
+                            class="progress-bar"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                Loan Approval Prediction • Machine Learning Mini Project
+            </p>
+
+            <span>
+                Powered by Logistic Regression
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
